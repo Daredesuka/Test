@@ -17,7 +17,7 @@ class CreatePelaporansTable extends Migration
             $table->id('id_pelaporan');
             $table->dateTime('tgl_pelaporan');
             $table->string('nama_karyawan');
-            $table->int('id_karyawan');
+            $table->integer('id_karyawan');
             $table->string('status_karyawan');
             $table->string('departemen');
             $table->string('kategori_bahaya');
@@ -27,6 +27,7 @@ class CreatePelaporansTable extends Migration
             $table->string('foto');
             $table->enum('status', ['pending', 'proses', 'selesai', 'terhapus']);
 
+            $table->softDeletes();
             $table->timestamps();
 
         });
